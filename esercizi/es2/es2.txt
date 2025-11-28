@@ -1,0 +1,88 @@
+Esercizio 2 (OPZIONALE) (10 Goleador)
+System Monitor Interattivo
+Obiettivo
+Creare un'applicazione a riga di comando che permette all'utente di visualizzare diverse statistiche di sistema usando le librerie sys e psutil.
+Requisiti
+1. Import e setup
+```python
+import sys
+import psutil
+```
+2. Menu principale
+Mostrare un menu numerato con almeno 6 opzioni di statistiche disponibili, ad esempio:
+  1. Versione Python
+  2. Piattaforma sistema operativo
+  3. Memoria RAM totale (in bytes)
+  4. Memoria RAM disponibile (in bytes)
+  5. Percentuale utilizzo CPU
+  6. Numero di CPU logiche
+  7. [Aggiungi altre che preferisci da sys o psutil]
+3. Logica di selezione
+- Chiedere all'utente quale statistica vuole visualizzare
+- Usare `input()` per raccogliere la scelta
+- Convertire l'input in intero usando `int()`
+- Usare `if/elif/else` per chiamare la funzione appropriata di `sys` o `psutil`
+- Mostrare il risultato esattamente come viene restituito dalla libreria
+4. Formato output
+Per ogni statistica, mostrare:
+  - Un titolo descrittivo
+  - Il valore restituito dalla libreria (senza conversioni)
+5. Gestione opzione non valida
+- Se l'utente inserisce un numero non presente nel menu, mostrare un messaggio di errore
+- Esempio: "Opzione non valida. Scegli un numero tra 1 e 6."
+Suggerimenti tecnici
+Funzioni utili:
+- `sys.version` → versione Python completa
+- `sys.platform` → sistema operativo
+- `psutil.virtual_memory().total` → RAM totale in bytes
+- `psutil.virtual_memory().available` → RAM disponibile in bytes
+- `psutil.virtual_memory().percent` → percentuale RAM usata
+- `psutil.cpu_percent(interval=1)` → percentuale CPU (attende 1 secondo per la misura)
+- `psutil.cpu_count()` → numero CPU logiche
+- `psutil.disk_usage('/').total` → spazio disco totale
+- `sys.executable` → percorso dell'eseguibile Python
+Esempio di output atteso
+```bash
+=== SYSTEM MONITOR ===
+Seleziona una statistica:
+
+1. Versione Python
+2. Sistema Operativo  
+3. RAM Totale
+4. RAM Disponibile
+5. Utilizzo CPU
+6. Numero CPU
+
+Inserisci la tua scelta: 3
+
+--- RAM TOTALE ---
+Valore: 17179869184 bytes
+
+Grazie per aver usato System Monitor!
+Note
+I valori mostrati saranno "grezzi" (es: bytes invece di GB, numeri con molte cifre decimali)
+Non devi convertire o formattare i valori
+Concentrati sulla logica del menu e sulla corretta selezione delle funzioni
+Struttura consigliata
+python
+import sys
+import psutil
+
+# Mostra menu
+print("=== SYSTEM MONITOR ===")
+print("1. Versione Python")
+# ... altre opzioni
+
+# Raccogli scelta
+scelta = input("Inserisci la tua scelta: ")
+scelta_numerica = int(scelta)
+
+# Logica di selezione
+if scelta_numerica == 1:
+    # mostra sys.version
+elif scelta_numerica == 2:
+    # mostra sys.platform
+# ... e così via
+else:
+    print("Opzione non valida!")
+pps. mi raccomando, usiamo mypy e rompiamo tutto quello che possiamo rompere!

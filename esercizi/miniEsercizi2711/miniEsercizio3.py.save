@@ -1,0 +1,12 @@
+'''-	valuta_temperatura(gradi)
+-	Prende la temperatura come parametro
+-	Restituisce una stringa:
+-	"Freddo" se < 15
+-	"Mite" se 15-25
+-	"Caldo" se > 25
+'''
+
+def valuta_temperatura(gradi):
+	if  gradi <15:
+		return "Freddo"
+	elif gradi 

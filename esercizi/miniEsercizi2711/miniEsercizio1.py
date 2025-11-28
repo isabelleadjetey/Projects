@@ -1,0 +1,47 @@
+'''Mini esercizi
+Crea le seguenti funzioni che utilizzano control flow e return
+
+-	restituisce_numero_pari(numero)
+-	Prende un numero come parametro
+-	Restituisce True se il numero è pari, False se è dispari
+-	Usa l'operatore modulo % e un if/else
+
+-	calcola_sconto(prezzo, età)
+-	Prende prezzo e età come parametri
+-	Se età < 18: sconto 20%
+-	Se età >= 65: sconto 30%
+-	Altrimenti: nessuno sconto
+-	Restituisce il prezzo finale
+
+-	valuta_temperatura(gradi)
+-	Prende la temperatura come parametro
+-	Restituisce una stringa:
+-	"Freddo" se < 15
+-	"Mite" se 15-25
+-	"Caldo" se > 25
+
+Crea le seguenti funzioni che utilizzano control flow e print (senza return)
+
+-	stampa_tabellina(numero)
+-	Prende un numero come parametro
+-	Usa un ciclo for per stampare la tabellina da 1 a 10
+-	Non restituisce nulla, solo stampa
+
+-	disegna_rettangolo(larghezza, altezza)
+-	Prende larghezza e altezza come parametri
+-	Usa cicli for annidati per stampare un rettangolo di asterischi
+-	Non restituisce nulla, solo stampa
+'''
+def restituisce_numero_pari(num):
+	'''
+	restituisce_numero_pari(numero)
+	Prende un numero come parametro
+	Restituisce True se il numero è pari, False se è dispari
+	Usa l'operatore modulo % e un if/else
+	'''
+	if num%2 == 0 :
+		return True
+	else:
+		return False
+print(restituisce_numero_pari(4))
+print(restituisce_numero_pari(7))
